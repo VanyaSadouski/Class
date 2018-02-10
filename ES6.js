@@ -19,7 +19,11 @@ class Car {
         return Math.round((Math.pow(this.weight / this.power, .75)) * 1000) / 1000;
     }
 
-    race(dist) {
+
+}
+
+Car.prototype.race = function (dist) {
+
         let fuel = this.fuelConsumption() * dist / 100;
         let fill = 0;
         let result;
@@ -44,8 +48,7 @@ class Car {
 Разгон до 100км/ч : ${this.secondsToHundred()}сек.
 Расход на 100км : ${this.fuelConsumption()}л.
 Пройдет расстояние в ${dist}км  за ${resultOfRace}`);
-    }
-}
+};
 
 let car1 = new Car(1300, 100, 200);
 let car2 = new Car(1600, 60, 80);
